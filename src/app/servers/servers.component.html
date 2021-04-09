@@ -1,4 +1,13 @@
 <h4>servers works!</h4>
-<button class="btn btn-primary" [disabled]='!allowNewServer'>Add Server</button>
+<button class="btn btn-primary" [disabled]='!allowNewServer' (click)="onCreateServer()">Add Server</button>
+
+<!-- string interpolation -->
+ <p>{{allowNewServer}}</p> 
+<!-- property binding example-->
+<p [innerHTML]="allowNewServer"></p> 
+
+
+<p>{{serverCreationStatus}}</p>
+
 <app-server></app-server>
 <app-server></app-server>
