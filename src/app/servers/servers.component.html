@@ -1,4 +1,10 @@
 <h4>servers works!</h4>
+
+<label for="server-name">Server Name</label>
+<input type="text" name="server-name" class="form-control" (input)="onUpdateServerName($event)">
+<p>{{serverName}}</p>
+
+<hr>
 <button class="btn btn-primary" [disabled]='!allowNewServer' (click)="onCreateServer()">Add Server</button>
 
 <!-- string interpolation -->
