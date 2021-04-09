@@ -1,7 +1,11 @@
 <h4>servers works!</h4>
 
 <label for="server-name">Server Name</label>
-<input type="text" name="server-name" class="form-control" (input)="onUpdateServerName($event)">
+<input type="text" name="server-name" class="form-control" (input)="onUpdateServerName($event)"><!-- This is one way binding -->
+
+<!-- This is two way binding -->
+<input type="text" class="form-control" [(ngModel)]="serverName">
+
 <p>{{serverName}}</p>
 
 <hr>
