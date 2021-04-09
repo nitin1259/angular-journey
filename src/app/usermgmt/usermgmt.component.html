@@ -1,7 +1,11 @@
 <label>Enter Username:</label>
-<input type="text" class="form-control" [(ngModel)]="userName" (input)="onChangeUserName($event)">
+<!-- <input type="text" class="form-control" [(ngModel)]="userName" (input)="onChangeUserName($event)"> -->
 
 
 <p>{{userName}}</p>
 
-<button class="btn btn-primary" [disabled]="!isEnabled" (click)="onButtonClick()">Clear</button>
+<!-- <button class="btn btn-primary" [disabled]="!isEnabled" (click)="onButtonClick()">Clear</button> -->
+
+<!-- another way of doing this is with another vaiable of isEnabled -->
+<input type="text" class="form-control" [(ngModel)]="userName" >
+<button class="btn btn-primary" [disabled]="userName===''" (click)="userName = ''">Clear</button>
