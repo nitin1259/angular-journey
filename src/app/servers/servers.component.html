@@ -1,9 +1,10 @@
 <h4>servers works!</h4>
 
-<label for="server-name">Server Name</label>
+<label for="server-name">Server Name- one way binding </label>
 <input type="text" name="server-name" class="form-control" (input)="onUpdateServerName($event)"><!-- This is one way binding -->
 
 <!-- This is two way binding -->
+<label>Server Name- two way binding </label>
 <input type="text" class="form-control" [(ngModel)]="serverName">
 
 <p>{{serverName}}</p>
@@ -17,7 +18,9 @@
 <p [innerHTML]="allowNewServer"></p> 
 
 
-<p>{{serverCreationStatus}}</p>
+<!-- <p>{{serverCreationStatus}}</p> -->
+<p *ngIf="isServerCreated">Server was created. server name is {{serverName}}</p>
+
 
 <app-server></app-server>
 <app-server></app-server>
