@@ -4,6 +4,7 @@ import {
   AfterViewChecked,
   AfterViewInit,
   Component,
+  ContentChild,
   DoCheck,
   ElementRef,
   Input,
@@ -34,6 +35,7 @@ export class ServerElementComponent
   @Input('serElement') element: { type: string; name: string; content: string };
   @Input() name: string;
   @ViewChild('heading') header: ElementRef;
+  @ContentChild('paragraphContent') paragraph: ElementRef;
 
   constructor() {
     console.log('constructor called!');
@@ -49,6 +51,7 @@ export class ServerElementComponent
     // console.log(
     //   ' Text for header field: ' + this.header.nativeElement.textContent
     // );  here it won't work the text as element reference is not ready
+    // console.log('Text paragraph: ' + this.paragraph.nativeElement.textContent);
   }
 
   ngDoCheck() {
@@ -57,6 +60,7 @@ export class ServerElementComponent
 
   ngAfterContentInit() {
     console.log('ngAfterContentInit called!');
+    console.log('Text paragraph: ' + this.paragraph.nativeElement.textContent);
   }
 
   ngAfterContentChecked() {
