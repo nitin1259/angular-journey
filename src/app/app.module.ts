@@ -12,6 +12,7 @@ import { ServerElementComponent } from './server-element/server-element.componen
 
 @NgModule({
   declarations: [AppComponent, ServerComponent, ServersComponent, UsermgmtComponent, CockpitComponent, ServerElementComponent],
+
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
