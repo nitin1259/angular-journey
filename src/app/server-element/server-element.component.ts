@@ -5,11 +5,13 @@ import {
   AfterViewInit,
   Component,
   DoCheck,
+  ElementRef,
   Input,
   OnChanges,
   OnDestroy,
   OnInit,
   SimpleChanges,
+  ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
 
@@ -31,6 +33,7 @@ export class ServerElementComponent
     OnDestroy {
   @Input('serElement') element: { type: string; name: string; content: string };
   @Input() name: string;
+  @ViewChild('heading') header: ElementRef;
 
   constructor() {
     console.log('constructor called!');
@@ -43,6 +46,9 @@ export class ServerElementComponent
 
   ngOnInit() {
     console.log('ngOnInit called!');
+    // console.log(
+    //   ' Text for header field: ' + this.header.nativeElement.textContent
+    // );  here it won't work the text as element reference is not ready
   }
 
   ngDoCheck() {
@@ -59,6 +65,9 @@ export class ServerElementComponent
 
   ngAfterViewInit() {
     console.log('ngAfterViewInit called!');
+    console.log(
+      ' Text for header field: ' + this.header.nativeElement.textContent
+    );
   }
 
   ngAfterViewChecked() {
