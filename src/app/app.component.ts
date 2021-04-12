@@ -25,4 +25,14 @@ export class AppComponent {
       content: serverData.serverContent,
     });
   }
+
+  onChangeFirst() {
+    console.log('onChangeFirst called!!');
+    this.serverElements[0].name = 'Changed';
+  }
+
+  onDestroyFirst() {
+    console.log('onDestroyFirst called !!!');
+    this.serverElements.splice(0, 1);
+  }
 }
